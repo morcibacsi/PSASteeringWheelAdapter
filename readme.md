@@ -27,7 +27,7 @@ To build the project you will need the following:
 - [ESP32 RMT peripheral VAN reader][lib_esp32_van_rx]
 
 ### Related links
-[JVC KD-330BT remote control by Istvan Polacsek][yt_jvc_kd330bt]
+- [JVC KD-330BT remote control by Istvan Polacsek][yt_jvc_kd330bt]
 
 [lib_esp32_van_rx]: https://github.com/morcibacsi/esp32_rmt_van_rx/
 [yt_jvc_kd330bt]: https://www.youtube.com/watch?v=8OANaTe5kxI
