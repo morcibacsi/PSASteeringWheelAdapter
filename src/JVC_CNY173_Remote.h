@@ -26,6 +26,8 @@ class JVC_CNY173_Remote : public AbstractRemote  {
     uint8_t _outPin;
     uint8_t _ledPin;
     uint8_t _prevWheelPosition;
+    uint8_t _prevWheelUpBit;
+    uint8_t _prevWheelDownBit;
 
     bool isPaused = false;
 
@@ -137,17 +139,21 @@ class JVC_CNY173_Remote : public AbstractRemote  {
         SendCommand(MUTE);
     }
 
-    void WheelPosition(uint8_t currentPosition) override
+    void WheelPosition(uint8_t wheelUpBit, uint8_t wheelDownBit, uint8_t currentPosition) override
     {
-        if (_prevWheelPosition > currentPosition)
+        if (_prevWheelPosition > currentPosition || _prevWheelDownBit != wheelDownBit)
         {
+            _prevWheelPosition = currentPosition;
+            _prevWheelDownBit = wheelDownBit;
             SendCommand(FOLDERFORW);
         }
-        if (_prevWheelPosition < currentPosition)
+        if (_prevWheelPosition < currentPosition || _prevWheelUpBit != wheelUpBit)
         {
+            _prevWheelPosition = currentPosition;
+            _prevWheelUpBit = wheelUpBit;
             SendCommand(FOLDERBACK);
         }
-        _prevWheelPosition = currentPosition;
+
     }
  };
 

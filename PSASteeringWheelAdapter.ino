@@ -1,8 +1,11 @@
 #include <esp32_arduino_rmt_van_rx.h>
 
 #include "src/AbstractRemote.h"
-#include "src/JVC_CNY173_Remote.h"
 #include "src/RemoteStalkStruct.h"
+
+#include "src/JVC_CNY173_Remote.h"
+#include "src/Pioneer_MCP4100_Remote.h"
+#include "src/Alpine_CNY173_Remote.h"
 
 ESP32_RMT_VAN_RX VAN_RX;
 
@@ -29,7 +32,22 @@ void setup()
 
     VAN_RX.Init(VAN_DATA_RX_RMT_CHANNEL, VAN_DATA_RX_PIN, VAN_DATA_RX_LED_INDICATOR_PIN, VAN_LINE_LEVEL_HIGH, VAN_NETWORK_TYPE_COMFORT);
 
+    // JVC remote control
     remoteControl = new JVC_CNY173_Remote(OUT_PIN, LED_PIN);
+
+    // Pioneer remote control
+    //
+    /*
+    const uint8_t SCK_PIN = 25;
+    const uint8_t MISO_PIN = 5;
+    const uint8_t MOSI_PIN = 33;
+    const uint8_t SS_PIN = 32;
+
+    remoteControl = new Pioneer_MCP4100_Remote(SCK_PIN, MISO_PIN, MOSI_PIN, SS_PIN);
+    //*/
+
+    // Alpine remote control
+    //remoteControl = new Alpine_CNY173_Remote(OUT_PIN);
 }
 
 void loop()
@@ -46,9 +64,9 @@ void loop()
             {
                 if (vanMessage[1] == 0x9C && vanMessage[2] == 0x4C)
                 {
-                    remoteControl->WheelPosition(vanMessage[4]);
-
                     remoteButton.value = vanMessage[3];
+
+                    remoteControl->WheelPosition(remoteButton.buttons.wheel_scrolled_up, remoteButton.buttons.wheel_scrolled_down, vanMessage[4]);
 
                     if (remoteButton.buttons.seek_down_pressed)
                     {

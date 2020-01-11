@@ -16,9 +16,29 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="PSASteeringWheelAdapter.ino" />
+    <None Include=".editorconfig" />
+    <None Include=".gitattributes" />
+    <None Include="readme.md" />
+    <None Include=".gitignore" />
+    <None Include="LICENSE" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="__vm\.PSASteeringWheelAdapter.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractRemote.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JVC_CNY173_Remote.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RemoteStalkStruct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pioneer_MCP4100_Remote.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Alpine_CNY173_Remote.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

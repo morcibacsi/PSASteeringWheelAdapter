@@ -12,7 +12,7 @@ class AbstractRemote {
     virtual void SeekDown() = 0;
     virtual void Source() = 0;
     virtual void Mute() = 0;
-    virtual void WheelPosition(uint8_t currentPosition) = 0;
+    virtual void WheelPosition(uint8_t wheelUpBit, uint8_t wheelDownBit, uint8_t currentPosition) = 0;
  };
 
 #endif
