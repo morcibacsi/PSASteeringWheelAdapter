@@ -114,7 +114,7 @@
     <ClInclude Include="src\AbstractRemote.h" />
     <ClInclude Include="src\Alpine_CNY173_Remote.h" />
     <ClInclude Include="src\JVC_CNY173_Remote.h" />
-    <ClInclude Include="src\Pioneer_MCP4100_Remote.h" />
+    <ClInclude Include="src\Pioneer_MCP41xxx_Remote.h" />
     <ClInclude Include="src\RemoteStalkStruct.h" />
     <ClInclude Include="__vm\.PSASteeringWheelAdapter.vsarduino.h" />
   </ItemGroup>

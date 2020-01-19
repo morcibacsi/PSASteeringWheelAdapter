@@ -35,10 +35,10 @@
     <ClInclude Include="src\RemoteStalkStruct.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Pioneer_MCP4100_Remote.h">
+    <ClInclude Include="src\Alpine_CNY173_Remote.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Alpine_CNY173_Remote.h">
+    <ClInclude Include="src\Pioneer_MCP41xxx_Remote.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
