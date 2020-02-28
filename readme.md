@@ -16,6 +16,8 @@ In the **src** folder you can find an abstract class (*AbstractRemote.h*) for th
 - JVC KD-330BT (thanks to Istvan Polacsek)
 - Pioneer (thanks to George Lazarov)
 - Alpine (thanks to Roman Jadrovski)
+- Peugeot CAN "remote" 
+    - (basically this forwards the VAN message on CAN bus so this way head units which does not support VAN bus but support Peugeot CAN bus protocol can respond to the remote stalk in cars with VAN bus)
 
 ### Building the project
 

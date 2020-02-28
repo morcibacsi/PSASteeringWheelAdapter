@@ -127,7 +127,10 @@ class Alpine_CNY173_Remote : public AbstractRemote  {
             _prevWheelUpBit = wheelUpBit;
             //SendCommand(FOLDERBACK);
         }
+    }
 
+    void ProcessRawData(uint8_t buttonData, uint8_t scrollData) override
+    {
     }
  };
 

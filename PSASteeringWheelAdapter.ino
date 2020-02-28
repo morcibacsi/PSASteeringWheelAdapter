@@ -6,6 +6,8 @@
 #include "src/JVC_CNY173_Remote.h"
 #include "src/Pioneer_MCP41xxx_Remote.h"
 #include "src/Alpine_CNY173_Remote.h"
+#include "src/Peugeot_CAN_Remote.h"
+#include "src/CanMessageSenderEsp32Arduino.h"
 
 ESP32_RMT_VAN_RX VAN_RX;
 
@@ -24,6 +26,7 @@ uint32_t prevTime = 0;
 
 AbstractRemote *remoteControl;
 RemoteButton remoteButton;
+AbstractCanMessageSender* canInterface;
 
 void setup()
 {
@@ -33,7 +36,7 @@ void setup()
     VAN_RX.Init(VAN_DATA_RX_RMT_CHANNEL, VAN_DATA_RX_PIN, VAN_DATA_RX_LED_INDICATOR_PIN, VAN_LINE_LEVEL_HIGH, VAN_NETWORK_TYPE_COMFORT);
 
     // JVC remote control
-    remoteControl = new JVC_CNY173_Remote(OUT_PIN, LED_PIN);
+    //remoteControl = new JVC_CNY173_Remote(OUT_PIN, LED_PIN);
 
     // Pioneer remote control
     //
@@ -48,6 +51,12 @@ void setup()
 
     // Alpine remote control
     //remoteControl = new Alpine_CNY173_Remote(OUT_PIN);
+
+    // Peugeot CAN remote control
+    const uint8_t CAN_RX_PIN = 33;
+    const uint8_t CAN_TX_PIN = 32;
+    canInterface = new CanMessageSenderEsp32Arduino(CAN_RX_PIN, CAN_TX_PIN);
+    remoteControl = new Peugeot_CAN_Remote(canInterface);
 }
 
 void loop()
@@ -97,6 +106,8 @@ void loop()
                     {
                         remoteControl->Mute();
                     }
+
+                    remoteControl->ProcessRawData(vanMessage[3], vanMessage[4]);
                 }
             }
         }

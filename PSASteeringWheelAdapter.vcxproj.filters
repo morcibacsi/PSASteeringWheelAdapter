@@ -41,5 +41,8 @@
     <ClInclude Include="src\Pioneer_MCP41xxx_Remote.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Peugeot_CAN_Remote.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

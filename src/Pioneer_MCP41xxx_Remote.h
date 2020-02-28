@@ -141,6 +141,10 @@ class Pioneer_MCP41xxx_Remote : public AbstractRemote  {
             //SendCommand(FOLDERBACK);
         }
     }
+
+    void ProcessRawData(uint8_t buttonData, uint8_t scrollData) override
+    {
+    }
  };
 
 #endif
