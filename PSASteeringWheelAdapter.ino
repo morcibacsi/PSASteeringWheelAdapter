@@ -4,7 +4,7 @@
 #include "src/RemoteStalkStruct.h"
 
 #include "src/JVC_CNY173_Remote.h"
-#include "src/Pioneer_MCP4100_Remote.h"
+#include "src/Pioneer_MCP41xxx_Remote.h"
 #include "src/Alpine_CNY173_Remote.h"
 
 ESP32_RMT_VAN_RX VAN_RX;
@@ -43,7 +43,7 @@ void setup()
     const uint8_t MOSI_PIN = 33;
     const uint8_t SS_PIN = 32;
 
-    remoteControl = new Pioneer_MCP4100_Remote(SCK_PIN, MISO_PIN, MOSI_PIN, SS_PIN);
+    remoteControl = new Pioneer_MCP41xxx_Remote(SCK_PIN, MISO_PIN, MOSI_PIN, SS_PIN, RAB_100, 125);
     //*/
 
     // Alpine remote control
