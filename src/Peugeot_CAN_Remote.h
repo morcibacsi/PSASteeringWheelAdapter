@@ -58,9 +58,9 @@ class Peugeot_CAN_Remote : public AbstractRemote  {
 
     void ProcessRawData(uint8_t buttonData, uint8_t scrollData) override
     {
-        uint8_t data[] = { buttonData, scrollData };
+        uint8_t data[] = { buttonData, scrollData, 0x00 };
 
-        _canInterface->SendMessage(CAN_ID_RADIO_REMOTE, 0, 2, data);
+        _canInterface->SendMessage(CAN_ID_RADIO_REMOTE, 0, 3, data);
     }
  };
 
