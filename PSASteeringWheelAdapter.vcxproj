@@ -111,12 +111,17 @@
     <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\AbstractCanMessageSender.h" />
     <ClInclude Include="src\AbstractRemote.h" />
+    <ClInclude Include="src\AbstractRemoteSource.h" />
     <ClInclude Include="src\Alpine_CNY173_Remote.h" />
+    <ClInclude Include="src\CanMessageSenderEsp32Arduino.h" />
+    <ClInclude Include="src\CanRemoteSource.h" />
     <ClInclude Include="src\JVC_CNY173_Remote.h" />
     <ClInclude Include="src\Peugeot_CAN_Remote.h" />
     <ClInclude Include="src\Pioneer_MCP41xxx_Remote.h" />
     <ClInclude Include="src\RemoteStalkStruct.h" />
+    <ClInclude Include="src\VanRemoteSource.h" />
     <ClInclude Include="__vm\.PSASteeringWheelAdapter.vsarduino.h" />
   </ItemGroup>
   <PropertyGroup>

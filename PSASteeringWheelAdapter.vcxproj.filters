@@ -44,5 +44,20 @@
     <ClInclude Include="src\Peugeot_CAN_Remote.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\AbstractRemoteSource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VanRemoteSource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CanRemoteSource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractCanMessageSender.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CanMessageSenderEsp32Arduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
